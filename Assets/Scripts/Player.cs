@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,7 +20,6 @@ public class Player : MonoBehaviour
     int currentLife;
     public int CurrentLife { get { return currentLife; } }
 
-
     Transform coverPosition;
     Transform uncoverPosition;
     bool onCover = false;
@@ -30,13 +30,11 @@ public class Player : MonoBehaviour
         currentLife = startLife;
     }
 
-
     public void TakeHit()
     {
         currentLife--;
         EventHitTaken.Invoke();
     }
-
     public void SetAreaPositions(Transform playerPos, Transform coverPos)
     {
         uncoverPosition = playerPos;

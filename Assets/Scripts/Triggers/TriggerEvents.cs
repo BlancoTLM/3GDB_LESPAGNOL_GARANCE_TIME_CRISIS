@@ -15,8 +15,8 @@ public class TriggerEvents : MonoBehaviour
 
     public List<string> reactToTags = new List<string>();
 
-    // dans les deux déclarations suivantes, new permet d'écraser la définition des variables collider et rigidbody qui existent déjà dans MonoBehaviour pour des raisons de compatibilité
-    // (elles ne sont plus utilisées par Unity depuis Unity 5 mais restent pour ne pas casser de vieux projets qui les utiliseraient)
+    // dans les deux dï¿½clarations suivantes, new permet d'ï¿½craser la dï¿½finition des variables collider et rigidbody qui existent dï¿½jï¿½ dans MonoBehaviour pour des raisons de compatibilitï¿½
+    // (elles ne sont plus utilisï¿½es par Unity depuis Unity 5 mais restent pour ne pas casser de vieux projets qui les utiliseraient)
     private new Collider collider;
     private new Rigidbody rigidbody;
 
@@ -42,8 +42,8 @@ public class TriggerEvents : MonoBehaviour
     {
         if (!collider.isTrigger)
         {
-            // la notation de Log avec un $ avant la chaîne de caractères permet d'insérer des noms de variables directement à l'aide d'accolades.
-            // (ce qui permet d'éviter les alternances de "chaine "+var+" chaine"+var, etc
+            // la notation de Log avec un $ avant la chaï¿½ne de caractï¿½res permet d'insï¿½rer des noms de variables directement ï¿½ l'aide d'accolades.
+            // (ce qui permet d'ï¿½viter les alternances de "chaine "+var+" chaine"+var, etc
             Debug.LogWarning($"Collider of {gameObject.name} not set as Trigger. Events will not work.");
         }
     }
@@ -55,11 +55,11 @@ public class TriggerEvents : MonoBehaviour
             EventTriggerEnter.Invoke();
             if(onlyOnce)
             {
-                // ici on prend le parti de désactiver un trigger only once sur trigger enter.
-                // il y a bien sûr des cas où on voudra avoir des trigger exit, il faudrait pouvoir donner le choix à l'utilisateur.
+                // ici on prend le parti de dï¿½sactiver un trigger only once sur trigger enter.
+                // il y a bien sï¿½r des cas oï¿½ on voudra avoir des trigger exit, il faudrait pouvoir donner le choix ï¿½ l'utilisateur.
                 this.enabled = false;
-                EventTriggerEnter.RemoveAllListeners(); // si on désactive, autant vider les listeners
-                EventTriggerExit.RemoveAllListeners(); // si on désactive, autant vider les listeners
+                EventTriggerEnter.RemoveAllListeners(); // si on dï¿½sactive, autant vider les listeners
+                EventTriggerExit.RemoveAllListeners(); // si on dï¿½sactive, autant vider les listeners
             }
         }
     }
